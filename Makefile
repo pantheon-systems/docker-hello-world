@@ -1,0 +1,17 @@
+IMAGE := quay.io/getpantheon/hello-world
+TAG := latest
+
+all: build push ## build and push all versions
+
+build: ## build all versions
+	docker build --pull -t $(IMAGE):$(TAG) .
+
+push: ## push all containers to docker registry
+	docker push $(IMAGE):$(TAG)
+
+help: ## print list of tasks and descriptions
+	@grep -E '^[0-9a-zA-Z._-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+
+.DEFAULT_GOAL := help
+
+.PHONY: all build push
