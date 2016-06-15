@@ -6,6 +6,9 @@ all: build push ## build and push all versions
 build: ## build all versions
 	docker build --pull -t $(IMAGE):$(TAG) .
 
+run: ## run in a local docker container
+	docker run --rm -p 5000:5000 $(IMAGE):$(TAG)
+
 push: ## push all containers to docker registry
 	docker push $(IMAGE):$(TAG)
 
