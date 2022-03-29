@@ -1,6 +1,8 @@
 docker hello-world (flask app)
 ==============================
 
+[![Unofficial](https://img.shields.io/badge/Pantheon-Unofficial-yellow?logo=pantheon&color=FFDC28)](https://pantheon.io/docs/oss-support-levels#unofficial)
+
 Python Flask "Hello world" app in a docker container for demo purposes.
 
 Build & Push
