@@ -1,4 +1,4 @@
-IMAGE := quay.io/getpantheon/hello-world
+IMAGE := us-central1-docker.pkg.dev/pantheon-sandbox/onboarding/hello-world
 TAG := latest
 
 all: build push ## build and push all versions

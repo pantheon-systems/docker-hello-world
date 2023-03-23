@@ -17,7 +17,7 @@ Run local
 Start container:
 
 ```
-$ docker run --rm -p 5000:5000 quay.io/getpantheon/hello-world
+$ docker run --rm -p 5000:5000 us-central1-docker.pkg.dev/pantheon-sandbox/onboarding/hello-world
  * Serving Flask app "main"
  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
 ```

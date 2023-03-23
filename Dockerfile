@@ -1,10 +1,9 @@
-FROM quay.io/getpantheon/alpine:latest
+FROM us-docker.pkg.dev/pantheon-artifacts/internal/alpine:3.14
 
-RUN apk add --update \
-    python \
-    py-pip \
-  && pip install virtualenv \
-  && rm -rf /var/cache/apk/*
+ENV PYTHONUNBUFFERED=1
+RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
+RUN python3 -m ensurepip
+RUN pip3 install --no-cache --upgrade pip setuptools virtualenv
 
 WORKDIR /app
 COPY . /app
